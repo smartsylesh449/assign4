@@ -1,0 +1,1173 @@
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+
+    --primary: #2563eb;
+
+    --primary-light: #60a5fa;
+
+    --secondary: #7c3aed;
+
+    --text: #172033;
+
+    --muted: #64748b;
+
+    --background: #eef4ff;
+
+    --white: #ffffff;
+
+    --border: rgba(148, 163, 184, 0.25);
+
+    --shadow:
+        0 25px 70px
+        rgba(30, 64, 175, 0.13);
+
+    --radius: 22px;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #f8fafc,
+            #ede9fe
+        );
+
+    line-height: 1.5;
+
+    padding: 35px 15px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.bg-circle {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    filter: blur(5px);
+}
+
+
+.circle-1 {
+
+    width: 350px;
+
+    height: 350px;
+
+    background:
+        rgba(37, 99, 235, 0.12);
+
+    top: -130px;
+
+    right: -100px;
+}
+
+
+.circle-2 {
+
+    width: 300px;
+
+    height: 300px;
+
+    background:
+        rgba(124, 58, 237, 0.10);
+
+    bottom: -120px;
+
+    left: -100px;
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard {
+
+    width: min(
+        100%,
+        1050px
+    );
+
+    margin: auto;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.9);
+
+    border-radius:
+        30px;
+
+    padding: 40px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+
+.overline {
+
+    color: var(--primary);
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    margin-bottom: 8px;
+}
+
+
+.header h1 {
+
+    font-size:
+        clamp(
+            2.5rem,
+            7vw,
+            4.2rem
+        );
+
+    line-height: 1;
+
+    margin-bottom: 10px;
+}
+
+
+.header h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.tagline {
+
+    color: var(--muted);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   API STATUS
+========================================= */
+
+.api-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    border-radius: 30px;
+
+    background: #ecfdf5;
+
+    color: #047857;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+}
+
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #10b981;
+
+    border-radius: 50%;
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-section {
+
+    padding: 25px;
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    margin-bottom: 25px;
+}
+
+
+.search-section h2 {
+
+    font-size: 1.1rem;
+
+    margin-bottom: 15px;
+}
+
+
+.search-form {
+
+    display: flex;
+
+    gap: 12px;
+}
+
+
+.search-input {
+
+    flex: 1;
+
+    position: relative;
+}
+
+
+.search-input span {
+
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    font-size: 1.1rem;
+}
+
+
+.search-input input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding:
+        0 15px 0 48px;
+
+    border:
+        2px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: var(--text);
+
+    font: inherit;
+
+    transition: 0.3s;
+}
+
+
+.search-input input:focus {
+
+    outline: none;
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+.search-button {
+
+    border: none;
+
+    padding:
+        0 28px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color: white;
+
+    font: inherit;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.search-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error-message {
+
+    color: #dc2626;
+
+    font-size: 0.9rem;
+
+    margin-top: 12px;
+
+    min-height: 20px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 50px;
+
+    color: var(--muted);
+}
+
+
+.loading.show {
+
+    display: flex;
+}
+
+
+.spinner {
+
+    width: 42px;
+
+    height: 42px;
+
+    border:
+        4px solid #dbeafe;
+
+    border-top-color:
+        var(--primary);
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   WEATHER CONTENT
+========================================= */
+
+.weather-content {
+
+    display: block;
+}
+
+
+.weather-content.hidden {
+
+    display: none;
+}
+
+
+/* =========================================
+   CURRENT WEATHER
+========================================= */
+
+.current-weather {
+
+    padding: 32px;
+
+    color: white;
+
+    border-radius:
+        var(--radius);
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 20px 45px
+        rgba(37, 99, 235, 0.25);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.current-weather::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    right: -70px;
+
+    top: -100px;
+}
+
+
+.location {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.location-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    border-radius: 12px;
+}
+
+
+.location h2 {
+
+    font-size: 1.6rem;
+}
+
+
+.location p {
+
+    opacity: 0.75;
+
+    font-size: 0.85rem;
+}
+
+
+.current-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 30px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.weather-symbol {
+
+    font-size: 5rem;
+
+    line-height: 1;
+}
+
+
+.temperature {
+
+    font-size: 5rem;
+
+    font-weight: 800;
+
+    line-height: 0.95;
+}
+
+
+.temperature sup {
+
+    font-size: 1.8rem;
+
+    vertical-align: top;
+
+    margin-left: 5px;
+}
+
+
+#weatherDescription {
+
+    margin-top: 12px;
+
+    font-size: 1rem;
+
+    opacity: 0.85;
+}
+
+
+.feels {
+
+    margin-top: 25px;
+
+    font-size: 0.9rem;
+
+    opacity: 0.85;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.feels strong {
+
+    margin-left: 5px;
+
+    color: white;
+}
+
+
+/* =========================================
+   METRICS
+========================================= */
+
+.metrics {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin:
+        20px 0 35px;
+}
+
+
+.metric-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 20px;
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    transition: 0.3s;
+}
+
+
+.metric-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+.metric-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 11px;
+
+    background: #eff6ff;
+
+    font-size: 1.15rem;
+}
+
+
+.metric-card span {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 0.75rem;
+
+    margin-bottom: 3px;
+}
+
+
+.metric-card strong {
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   FORECAST
+========================================= */
+
+.forecast-section {
+
+    margin-top: 10px;
+}
+
+
+.section-title {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.section-title h2 {
+
+    font-size: 1.6rem;
+}
+
+
+.forecast-label {
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+.hourly-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+}
+
+
+.hour-card {
+
+    min-width: 120px;
+
+    padding: 20px 12px;
+
+    text-align: center;
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    transition: 0.3s;
+}
+
+
+.hour-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+.hour-time {
+
+    color: var(--muted);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+.hour-icon {
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+
+.hour-temp {
+
+    font-size: 1.15rem;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   API INFO
+========================================= */
+
+.api-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background:
+        #eff6ff;
+
+    border:
+        1px solid #dbeafe;
+}
+
+
+.api-info-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: white;
+}
+
+
+.api-info h3 {
+
+    font-size: 0.95rem;
+
+    margin-bottom: 3px;
+}
+
+
+.api-info p {
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 0.75rem;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.footer p:first-child {
+
+    margin-bottom: 5px;
+}
+
+
+.footer strong {
+
+    color: var(--primary);
+}
+
+
+/* =========================================
+   SCREEN READER
+========================================= */
+
+.sr-only {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(
+        0,
+        0,
+        0,
+        0
+    );
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .dashboard {
+
+        padding: 28px;
+    }
+
+
+    .metrics {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .hourly-grid {
+
+        grid-template-columns:
+            repeat(6, 120px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 10px;
+    }
+
+
+    .dashboard {
+
+        padding: 20px;
+
+        border-radius: 22px;
+    }
+
+
+    .header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .api-status {
+
+        align-self: flex-start;
+    }
+
+
+    .search-form {
+
+        flex-direction: column;
+    }
+
+
+    .search-button {
+
+        height: 52px;
+    }
+
+
+    .current-weather {
+
+        padding: 25px;
+    }
+
+
+    .current-info {
+
+        gap: 15px;
+    }
+
+
+    .weather-symbol {
+
+        font-size: 3.5rem;
+    }
+
+
+    .temperature {
+
+        font-size: 3.5rem;
+    }
+
+
+    .temperature sup {
+
+        font-size: 1.2rem;
+    }
+
+
+    .metrics {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .metric-card {
+
+        padding: 15px;
+    }
+
+
+    .section-title {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .hourly-grid {
+
+        grid-template-columns:
+            repeat(6, 105px);
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .metrics {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .current-info {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
