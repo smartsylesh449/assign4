@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #e0f2fe;
+    min-height: 100vh;
+    padding: 40px 15px;
+}
+
+.weather-app {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    color: #0369a1;
+    font-size: 34px;
+}
+
+.header p {
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Search */
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #0284c7;
+}
+
+.search-box button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #0284c7;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-box button:hover {
+    background: #0369a1;
+}
+
+/* Message */
+
+#message {
+    text-align: center;
+    margin: 10px;
+    color: #dc2626;
+}
+
+/* Weather */
+
+.weather-box {
+    background: #f0f9ff;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.location {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.location h2 {
+    color: #0c4a6e;
+}
+
+.location p {
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Main Weather */
+
+.main-weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.temperature {
+    font-size: 48px;
+    font-weight: bold;
+    color: #0284c7;
+}
+
+.main-weather h3 {
+    color: #075985;
+}
+
+.main-weather p {
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Details */
+
+.details {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.card {
+    flex: 1;
+    background: white;
+    padding: 18px 10px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.card strong {
+    color: #0369a1;
+    font-size: 20px;
+}
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .main-weather {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .details {
+        flex-direction: column;
+    }
+}

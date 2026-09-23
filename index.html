@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkyCast Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="weather-app">
+
+    <div class="header">
+        <h1>SkyCast</h1>
+        <p>Live Weather Dashboard</p>
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Message -->
+    <p id="message"></p>
+
+    <!-- Weather Result -->
+    <div id="weatherBox" class="weather-box">
+
+        <div class="location">
+            <h2 id="cityName">--</h2>
+            <p id="countryName">--</p>
+        </div>
+
+        <div class="main-weather">
+            <div class="temperature">
+                <span id="temperature">--</span>°C
+            </div>
+
+            <div>
+                <h3 id="condition">--</h3>
+                <p>Current Weather</p>
+            </div>
+        </div>
+
+        <div class="details">
+
+            <div class="card">
+                <h3>💧</h3>
+                <p>Humidity</p>
+                <strong id="humidity">--</strong>
+                <span>%</span>
+            </div>
+
+            <div class="card">
+                <h3>💨</h3>
+                <p>Wind Speed</p>
+                <strong id="wind">--</strong>
+                <span> km/h</span>
+            </div>
+
+            <div class="card">
+                <h3>🌡️</h3>
+                <p>Feels Like</p>
+                <strong id="feels">--</strong>
+                <span>°C</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="footer">Powered by Open-Meteo REST API</p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
